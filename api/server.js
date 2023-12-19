@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 
 // Import routers
-const projectRouter = require("./project/router"); // If server.js is in the api folder
+const projectRouter = require("./project/router"); 
 const resourceRouter = require("./resource/router");
 const taskRouter = require("./task/router");
 

@@ -14,12 +14,12 @@ const findAll = async () => {
 
   return tasks.map(task => ({
     ...task,
-    task_completed: Boolean(task.task_completed), // Ensure it's converted to a boolean
+    task_completed: Boolean(task.task_completed), 
   }));
 };
 
 const create = async (task) => {
-  const [taskId] = await db('tasks').insert(task); // No need for returning id
+  const [taskId] = await db('tasks').insert(task); 
   return findById(taskId);
 };
 
@@ -39,7 +39,7 @@ const findById = async (id) => {
 
   return {
     ...task,
-    task_completed: Boolean(task.task_completed), // Ensure it's converted to a boolean
+    task_completed: Boolean(task.task_completed), 
   };
 };
 

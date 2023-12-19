@@ -11,14 +11,14 @@ const findAll = async () => {
 const create = async (resource) => {
   let resourceId;
   if (process.env.DB_ENV === 'production') {
-    // For PostgreSQL
+   
     [resourceId] = await db('resources').insert(resource).returning('resource_id');
   } else {
-    // For SQLite
+   
     [resourceId] = await db('resources').insert(resource);
   }
 
-  // Fetch and return the newly created resource
+ 
   const newResource = await findById(resourceId);
   return newResource;
 };
